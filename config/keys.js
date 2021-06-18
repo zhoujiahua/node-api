@@ -1,4 +1,4 @@
 module.exports = {
-    mongooseURI: "mongodb://nodedb:nodedb123456@ds121163.mlab.com:21163/nodedb",
+    mongooseURI: "mongodb://119.29.19.38:12306/ndapi",
     secretOrKey:"secret"
 }

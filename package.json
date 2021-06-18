@@ -1,24 +1,21 @@
 {
-  "name": "nodeapi",
+  "name": "node-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": "git@github.com:zhoujiahua/node-api.git",
+  "author": "jerryZhou <jerry.zhou@ptn.advantest.com>",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
-  },
-  "devDependencies": {
-    "bcrypt": "^3.0.3",
-    "body-parser": "^1.18.3",
-    "gravatar": "^1.8.0",
-    "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.4.2",
-    "passport": "^0.4.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "gravatar": "^1.8.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.14",
+    "passport": "^0.4.1",
     "passport-jwt": "^4.0.0"
   }
 }
