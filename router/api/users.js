@@ -24,8 +24,8 @@ router.post("/register", (req, res) => {
     // console.log(req.body);
     //查询数据库中邮箱是否存在
     User.findOne({
-            email: req.body.email
-        })
+        email: req.body.email
+    })
         .then((user) => {
             if (user) {
                 return res.status(400).json({
@@ -69,8 +69,8 @@ router.post("/login", (req, res) => {
 
     //查询数据库
     User.findOne({
-            email
-        })
+        email
+    })
         .then(user => {
             if (!user) {
                 return res.status(404).json({
@@ -82,9 +82,9 @@ router.post("/login", (req, res) => {
                     .then(isMatch => {
                         if (isMatch) {
                             // jwt.sign("规则","加密名字",{过期时间},"箭头函数")
-                            const rule = {id: user.id,name: user.name,avatar:user.avatar};
-                            jwt.sign(rule,keys.secretOrKey, {expiresIn:3600}, (err, token) => {
-                                if(err) throw err;
+                            const rule = { id: user.id, name: user.name, avatar: user.avatar };
+                            jwt.sign(rule, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+                                if (err) throw err;
                                 res.json({
                                     succes: true,
                                     token: "Bearer " + token
@@ -98,7 +98,6 @@ router.post("/login", (req, res) => {
                             });
                         }
                     })
-
             }
         })
 })
@@ -106,14 +105,14 @@ router.post("/login", (req, res) => {
 //$router get api/users/current  token 请求验证
 //@desc return current user
 //@access private
-router.get("/current",passort.authenticate("jwt",{session:false}),(req,res) => {
+router.get("/current", passort.authenticate("jwt", { session: false }), (req, res) => {
     // res.json({msg:"success"});
     // res.json(req.user);
     //配置返回信息
     res.json({
-        name:req.user.name,
-        email:req.user.email,
-        avatar:req.user.avatar
+        name: req.user.name,
+        email: req.user.email,
+        avatar: req.user.avatar
     })
 })
 
